@@ -1,2 +1,2 @@
 # ctrip
-ctrip homepage demo, use less.
+ctrip homepage demo, use Flex.
