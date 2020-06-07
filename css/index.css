@@ -1,0 +1,131 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 去掉ul中li的点 */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+}
+
+/* 盒子大小包括边框 */
+div {
+    box-sizing: border-box;
+}
+
+.search-index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* 盒子居中，不写也行 */
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform:translate(-50%) ;
+    /* 固定定位的盒子应该有宽度 */
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    height: 44px;
+    background-color: #F6F6F6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+
+/* 精灵图使用
+1、缩小一半
+2、量图标大小，和坐标
+3、bacground-size宽度:一半 auto */
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    line-height: 24px;
+    font-size: 12px;
+    padding-left: 25px;
+    color: #666;
+    border: 1px solid #ccc;
+    margin: 7px 9px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: "";
+    /* 绝对定位不占用空间，可以自定义大小，用top lef 来控制位置 */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+
+.user {
+    height: 44px;
+    width: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    /* 常规配置，块状元素才有大小 */
+    content:"";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -0.5px;
+}
+
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+.local-nav {
+    display: flex;
+    height: 64px;
+    margin: 3px 4px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.local-nav-icon {
+    width: 32px;
+    height: 32px;
+    background-color: pink;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
